@@ -4,8 +4,8 @@ from datetime import datetime
 from fastapi import Depends, HTTPException
 from fastapi.security import OAuth2PasswordBearer
 
-from api.schemas import User, TokenData
-from api.utils import (
+from .schemas import User, TokenData
+from .utils import (
     ALGORITHM,
     JWT_SECRET_KEY
 )
