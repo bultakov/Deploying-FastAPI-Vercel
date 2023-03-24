@@ -2,9 +2,9 @@ from fastapi import FastAPI, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
 from pydantic import BaseModel
 
-from .deps import get_current_user, users
-from .schemas import User
-from .utils import verify_password, create_access_token, create_refresh_token, get_hashed_password
+from api.deps import get_current_user, users
+from api.schemas import User
+from api.utils import verify_password, create_access_token, create_refresh_token, get_hashed_password
 
 app = FastAPI(docs_url='/docs', redoc_url=None)
 
