@@ -3,6 +3,5 @@ uvicorn
 orjson
 python-jose[cryptography]
 passlib[bcrypt]
-uvloop
 python-dotenv
 python-multipart
