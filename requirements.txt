@@ -1,6 +1,5 @@
 FastAPI
 uvicorn
-orjson
 python-jose[cryptography]
 passlib[bcrypt]
 python-dotenv
