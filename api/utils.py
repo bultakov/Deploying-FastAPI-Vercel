@@ -3,15 +3,13 @@ from os import environ
 from datetime import datetime, timedelta
 from typing import Union, Any
 from jose import jwt
-from dotenv import load_dotenv
 
-load_dotenv()
 
 ACCESS_TOKEN_EXPIRE_MINUTES = 60  # 60 minutes
 REFRESH_TOKEN_EXPIRE_MINUTES = 60 * 24 * 7  # 7 days
 ALGORITHM = "HS256"
-JWT_SECRET_KEY = environ['SECRET_KEY']
-JWT_REFRESH_SECRET_KEY = environ['SECRET_KEY']
+JWT_SECRET_KEY = "e&e@255a1fc$3e4e344ab9.76167fe7c85436ab5fa06^764378.89d43bf93*e0"
+JWT_REFRESH_SECRET_KEY = "e&e@255a1fc$3e4e344ab9.76167fe7c85436ab5fa06^764378.89d43bf93*e0"
 
 password_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
