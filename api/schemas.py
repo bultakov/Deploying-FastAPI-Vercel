@@ -19,3 +19,10 @@ class User(BaseModel):
 
 class UserInDB(User):
     password: str
+
+
+class UserAuth(BaseModel):
+    username: str
+    full_name: str
+    email: str
+    password: str

@@ -4,7 +4,7 @@ from fastapi.security import OAuth2PasswordRequestForm
 from pydantic import BaseModel
 
 from .deps import get_current_user, users
-from .schemas import User
+from .schemas import User, UserAuth
 from .utils import verify_password, create_access_token, create_refresh_token, get_hashed_password
 
 app = FastAPI(docs_url='/docs', redoc_url=None, debug=False)
@@ -16,13 +16,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-
-class UserAuth(BaseModel):
-    username: str
-    full_name: str
-    email: str
-    password: str
 
 
 @app.get('/')
