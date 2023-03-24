@@ -13,7 +13,7 @@ class UserAuth(BaseModel):
     username: str
     full_name: str
     email: str
-    hashed_password: str
+    password: str
 
 
 @app.get('/')
@@ -35,7 +35,7 @@ async def create_user(data: UserAuth):
         'username': data.username,
         'full_name': data.full_name,
         'email': data.email,
-        'hashed_password': get_hashed_password(password=data.hashed_password),
+        'password': get_password(password=data.password),
     }
     users[data.username] = user
     return user
@@ -50,7 +50,7 @@ async def get_token(form_data: OAuth2PasswordRequestForm = Depends()):
             "message": "Foydalanuvchi topilmadi!!!"
         }
 
-    hashed_pass = user.get('hashed_password')
+    hashed_pass = user.get('password')
     if not verify_password(form_data.password, hashed_pass):
         return {
             "success": "error",

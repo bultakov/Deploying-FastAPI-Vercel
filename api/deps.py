@@ -22,7 +22,7 @@ users: dict = {
         "username": "bultakov",
         "full_name": "Ibrohim Bultakov",
         "email": "bii23@gmail.com",
-        "hashed_password": "$2b$12$Tw9sxhiI11.PlYyGBHq.Y.nyd6Dcx3MKam16Mx3xB2MlwJs5sjihO",
+        "password": "$2b$12$Tw9sxhiI11.PlYyGBHq.Y.nyd6Dcx3MKam16Mx3xB2MlwJs5sjihO",
     }
 }
 
