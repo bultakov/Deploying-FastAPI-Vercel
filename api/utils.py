@@ -1,5 +1,4 @@
 from passlib.context import CryptContext
-from os import environ
 from datetime import datetime, timedelta
 from typing import Union, Any
 from jose import jwt
