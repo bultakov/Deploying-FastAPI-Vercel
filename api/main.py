@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Depends, HTTPException, status
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import OAuth2PasswordRequestForm
 from pydantic import BaseModel
 
@@ -6,7 +7,7 @@ from .deps import get_current_user, users
 from .schemas import User
 from .utils import verify_password, create_access_token, create_refresh_token, get_hashed_password
 
-app = FastAPI(docs_url='/docs', redoc_url=None)
+app = FastAPI(docs_url='/docs', redoc_url=None, debug=False)
 
 app.add_middleware(
     CORSMiddleware,

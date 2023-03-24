@@ -13,8 +13,8 @@ class TokenData(BaseModel):
 
 class User(BaseModel):
     username: str
-    email: str | None = None
-    full_name: str | None = None
+    email: str
+    full_name: str
 
 
 class UserInDB(User):
