@@ -16,6 +16,13 @@ class UserAuth(BaseModel):
     hashed_password: str
 
 
+@users_router.get('/')
+async def home():
+    return {
+        "docs_url": "https://deploying-fastapi-vercel.vercel.app/docs/"
+    }
+
+
 @users_router.post('/signup', response_model=User)
 async def create_user(data: UserAuth):
     user = users.get(data.username)
