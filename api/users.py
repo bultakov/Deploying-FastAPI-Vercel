@@ -1,7 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException, status
-from fastapi.middleware.cors import CORSMiddleware
+
 from fastapi.security import OAuth2PasswordRequestForm
-from pydantic import BaseModel
 
 from .deps import get_current_user, users
 from .schemas import User, UserAuth
@@ -21,7 +20,7 @@ async def home():
 async def create_user(data: UserAuth):
     user = users.get(data.username)
     if user:
-            raise HTTPException(
+        raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="User with this email already exist"
         )
@@ -29,7 +28,7 @@ async def create_user(data: UserAuth):
         'username': data.username,
         'full_name': data.full_name,
         'email': data.email,
-        'password': get_password(password=data.password),
+        'password': get_hashed_password(password=data.password),
     }
     users[data.username] = user
     return user
